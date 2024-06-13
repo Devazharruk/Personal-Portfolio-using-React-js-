@@ -1,0 +1,75 @@
+@import '../../app.scss';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    background-color: white;
+
+    @include laptop{
+      width: 300px; 
+    }
+    @include mobile{
+      width: 200px; 
+    }
+
+    .links {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      a {
+        font-size: 40px;
+        color: black;
+
+        @include laptop{
+          font-size: 30px;
+        } 
+        @include mobile{
+          font-size: 20px;
+        }
+
+      }
+    }
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    outline: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

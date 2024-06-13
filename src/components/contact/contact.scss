@@ -1,0 +1,140 @@
+@import "../../app.scss";
+
+// Define common variables
+$font-size-large: 100px;
+$font-size-medium: 50px;
+$font-size-small: 36px;
+$padding-large: 20px;
+$padding-medium: 12px;
+$padding-small: 10px;
+$gap-large: 40px;
+$gap-medium: 25px;
+$gap-small: 20px;
+$max-width: 1366px;
+$border-color: white;
+$background-color: transparent;
+$button-background-color: orange;
+$button-font-weight: 500;
+
+.contact {
+  height: 100%;
+  max-width: $max-width;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: auto;
+
+  @include laptop {
+    max-width: 90%;
+  }
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: $padding-small;
+  }
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-large;
+
+    @include laptop {
+      gap: $gap-medium;
+    }
+
+    @include mobile {
+      gap: $gap-small;
+      text-align: center;
+      align-items: center;
+      margin-top: 70px;
+    }
+
+    h1 {
+      font-size: $font-size-large;
+      line-height: 88px;
+
+      @include laptop {
+        font-size: $font-size-medium;
+      }
+
+      @include mobile {
+        font-size: $font-size-small;
+      }
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+  .formContainer {
+    flex: 1;
+    position: relative;
+    @include mobile {
+      padding: 30px;
+      width: 100%;
+    }
+
+    .phoneSvg {
+      position: absolute;
+      margin: auto;
+      stroke: orange;
+
+      svg {
+        @include mobile {
+          width: 300px;
+          height: 300px;
+        }
+        @include laptop {
+          width: 330px;
+          height: 330px;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: $gap-small;
+      z-index: 999;
+      position: relative;
+
+      @include laptop {
+        gap: $gap-medium;
+      }
+
+      input,
+      textarea {
+        padding: $padding-large;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+
+        @include laptop {
+          padding: $padding-medium;
+        }
+
+        @include mobile {
+          padding: $padding-small;
+        }
+      }
+      button {
+        background-color: $button-background-color;
+        font-weight: $button-font-weight;
+        border: none;
+        cursor: pointer;
+        padding: $padding-large;
+
+        @include mobile {
+          padding: $padding-small;
+        }
+
+        @include laptop {
+          padding: $padding-medium;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@import "../../variables";
+@import "../../app.scss";
+
+.hero {
+  height: calc(100vh - 100px);
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+  overflow: hidden;
+
+   // Wrapper for hero content
+  .wrapper {
+    height: 100%;
+    max-width: 1366px;
+    margin: auto;
+
+    @include laptop{
+      max-width: 90%;
+    }
+
+    // Text container styles
+    .textContainer {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-lg;
+
+      @include laptop{
+        gap: $spacing-md;
+      }
+
+      @include mobile {
+        width: 100%;
+        height: 50%;
+        gap: $spacing-sm;
+        align-items: center;
+        text-align: center;
+      }
+
+     
+
+      h2 {
+        font-size: $font-size-sm;
+        color: $primary-color;
+        letter-spacing: 10px;
+
+        @include laptop{
+          font-size: $font-size-xs;
+        }
+      }
+
+      h1 {
+        font-size: $font-size-lg;
+
+        @include laptop{
+          font-size: $font-size-md;
+        }
+        @include mobile {
+          font-size: 2.25rem;
+        }
+
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        button {
+          padding: $spacing-sm;
+          background-color: $button-bg-color;
+          cursor: pointer;
+          border: 1px solid $button-border-color;
+          border-radius: $spacing-xs;
+          font-weight: 300;
+          margin-right: $spacing-sm;
+          color: $button-text-color;
+
+          @include laptop{
+            padding: 0.9375rem;
+          }
+
+          @include mobile {
+            margin-right: $spacing-xs;
+            margin-bottom: $spacing-xs;
+            padding: 0.9375rem; 
+            flex: 1 1 auto;
+          }
+        }
+      }
+
+      img {
+        width: 3.125rem;
+
+        @include laptop{
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    bottom: -120px;
+    font-size: 50vh;
+    white-space: nowrap;
+    color: #ffffff09;
+    font-weight: bold;
+  }
+
+  .imageContainer {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mobile {
+      top: unset;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
